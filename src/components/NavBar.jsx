@@ -1,6 +1,16 @@
+import { useState, useEffect } from "react";
 import CartWidget from "./CartWidget";
+import { NavLink } from "react-router";
 
 function NavBar() {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetch("https://dummyjson.com/products/categories")
+      .then((res) => res.json())
+      .then((data) => setCategories(data));
+  }, [categories]);
+
   return (
     <nav
       className="navbar navbar-expand-lg bg-primary-subtle"
@@ -42,6 +52,29 @@ function NavBar() {
               <a className="nav-link " href="#" aria-disabled="true">
                 Juegos
               </a>
+            </li>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href=""
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categorias
+              </a>
+              <ul className="dropdown-menu">
+                {categories.map((cat) => (
+                  <li key={cat.name}>
+                    <NavLink
+                      to={`/category/${cat.slug}`}
+                      className="dropdown-item"
+                    >
+                      {cat.name}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
             </li>
           </ul>
         </div>

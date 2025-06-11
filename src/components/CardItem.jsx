@@ -6,14 +6,14 @@ export default function CardItem({ item }) {
       style={{ width: "18rem" }}
     >
       <img
-        src="./src/assets/foto.avif"
+        src={item.thumbnail}
         className="card-img-top"
         alt={item.descripcion}
       ></img>
       <div className="card-body">
-        <h5 className="card-title"> {item.nombre}</h5>
-        <h5 className="card-title text-muted"> $ {item.precio}</h5>
-        <p className="card-text"> {item.descripcion}</p>
+        <h5 className="card-title"> {item.title}</h5>
+        <h5 className="card-title text-muted"> $ {item.price}</h5>
+        <p className="card-text"> {item.description}</p>
       </div>
       <button type="button" className="btn btn-primary w-50 mb-1">
         Ver
