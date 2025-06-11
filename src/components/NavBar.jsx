@@ -18,7 +18,7 @@ function NavBar() {
     >
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Ton Mobles
+          e-comm
         </a>
         <button
           className="navbar-toggler"

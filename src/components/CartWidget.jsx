@@ -3,7 +3,7 @@ function CartWidget() {
     <>
       <div>
         <img
-          src="./src/assets/carrito.webp"
+          src="../src/assets/carrito.webp"
           alt="carrito"
           style={{ width: 24, height: 24 }}
         />
