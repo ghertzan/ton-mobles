@@ -1,3 +1,6 @@
+import ItemCount from "./ItemCount";
+import { NavLink } from "react-router";
+
 export default function ItemDetail({ item }) {
   return (
     <div className="d-flex justify-content-center mt-5">
@@ -14,8 +17,29 @@ export default function ItemDetail({ item }) {
             <div className="card-body">
               <h5 className="card-title">{item?.title}</h5>
               <p className="card-text">{item?.description}</p>
-              <p className="text-muted">$ {item?.price}</p>
+              <p className="text-success fs-3">
+                ${" "}
+                {Number.parseFloat(
+                  item?.price * (1 - item?.discountPercentage / 100)
+                ).toFixed(2)}
+              </p>
+              <p>
+                <span className="text-muted">
+                  {" "}
+                  con desc. del {item?.discountPercentage} %
+                </span>
+              </p>
+              <p className="card-text text-muted">
+                Precio normal: <del>$ {item?.price}</del>
+              </p>
+              <NavLink to={"/"} className={"btn btn-primary"}>
+                {" "}
+                Volver
+              </NavLink>
             </div>
+          </div>
+          <div className="row g-0">
+            <ItemCount />
           </div>
         </div>
       </div>
