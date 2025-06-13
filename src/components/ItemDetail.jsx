@@ -3,44 +3,36 @@ import { NavLink } from "react-router";
 
 export default function ItemDetail({ item }) {
   return (
-    <div className="d-flex justify-content-center mt-5">
-      <div className="card mb-3" style={{ maxWidth: "540px", height: "auto" }}>
-        <div className="row g-0">
-          <div className="col-md-4">
-            <img
-              src={item?.thumbnail}
-              className="img-fluid rounded-start"
-              alt={item?.title}
-            />
-          </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title">{item?.title}</h5>
-              <p className="card-text">{item?.description}</p>
-              <p className="text-success fs-3">
-                ${" "}
-                {Number.parseFloat(
-                  item?.price * (1 - item?.discountPercentage / 100)
-                ).toFixed(2)}
-              </p>
-              <p>
-                <span className="text-muted">
-                  {" "}
-                  con desc. del {item?.discountPercentage} %
-                </span>
-              </p>
-              <p className="card-text text-muted">
-                Precio normal: <del>$ {item?.price}</del>
-              </p>
-              <NavLink to={"/"} className={"btn btn-primary"}>
-                {" "}
-                Volver
-              </NavLink>
-            </div>
-          </div>
-          <div className="row g-0">
-            <ItemCount />
-          </div>
+    <div className="d-flex flex justify-content-around">
+      <div className="card m-3" style={{ width: "23rem" }}>
+        <span className="badge bg-success">
+          {item?.discountPercentage} % OFF
+        </span>
+        <img
+          src={item?.thumbnail}
+          className="card-img-top"
+          alt={item?.title}
+        ></img>
+
+        <div className="card-body">
+          <h5 className="card-title">{item?.title}</h5>
+          <p className="card-text">{item?.description}</p>
+          <p className="card-text fs-3">
+            {" "}
+            ${" "}
+            {Number.parseFloat(
+              (item?.price * (100 - item?.discountPercentage)) / 100
+            ).toFixed(2)}
+          </p>
+          <p className="card-text fs-6">
+            {" "}
+            <del className="">$ {item?.price}</del>
+          </p>
+          <NavLink to={"/"} className={"btn btn-primary"}>
+            {" "}
+            Volver{" "}
+          </NavLink>
+          <ItemCount />
         </div>
       </div>
     </div>
