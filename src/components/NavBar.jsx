@@ -14,7 +14,7 @@ function NavBar() {
   return (
     <nav
       className="navbar navbar-expand-lg bg-primary-subtle"
-      data-bs-theme="dark"
+      data-bs-theme="light"
     >
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
