@@ -32,7 +32,7 @@ export default function ItemDetail({ item }) {
             {" "}
             Volver{" "}
           </NavLink>
-          <ItemCount />
+          <ItemCount item={item} />
         </div>
       </div>
     </div>
