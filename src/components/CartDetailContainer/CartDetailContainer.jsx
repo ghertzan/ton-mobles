@@ -1,5 +1,5 @@
-import { useCart } from "../hooks/useCart";
-import CartItemDetail from "./CartItemDetail";
+import { useCart } from "../../hooks/useCart";
+import CartItemDetail from "../CartItemDetail/CartItemDetail";
 
 export default function CartDetailContainer() {
   const { cart } = useCart();

@@ -1,0 +1,18 @@
+.btnGh {
+  background-color: var(--btn-base);
+  margin: 0.1rem;
+  border-style: none;
+  padding: 0.1;
+  text-align: center;
+}
+.btnGh:hover {
+  background-color: var(--btn-hover);
+}
+
+.count {
+  color: var(--text-general);
+  font-size: medium;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  padding: 0 0.1rem 0;
+}

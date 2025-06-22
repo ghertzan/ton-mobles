@@ -1,4 +1,5 @@
-import ItemCount from "./ItemCount";
+import CartItemDeleter from "../CartItemDeleter/CartItemDeleter";
+import ItemCount from "../ItemCount/ItemCount";
 
 export default function CartItemDetail({ cartItem }) {
   return (
@@ -12,6 +13,7 @@ export default function CartItemDetail({ cartItem }) {
               <p className="text-muted">Marca: {cartItem.brand}</p>
               <p className="text-muted">Garantía: {cartItem.returnPolicy}</p>
               <ItemCount item={cartItem} />
+              <CartItemDeleter item={cartItem} />
             </div>
           </div>
         </div>

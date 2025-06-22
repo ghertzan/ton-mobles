@@ -1,4 +1,4 @@
-import CardItem from "./CardItem";
+import CardItem from "../CardItem/CardItem";
 
 export default function ItemList({ items }) {
   return (

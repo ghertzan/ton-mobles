@@ -1,4 +1,4 @@
-import ItemCount from "./ItemCount";
+import ItemCount from "../ItemCount/ItemCount";
 import { NavLink } from "react-router";
 
 export default function ItemDetail({ item }) {
