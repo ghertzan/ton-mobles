@@ -47,7 +47,7 @@ function ItemCount({ item }) {
       </div>
       <div>
         <button className="btn" onClick={handleAdd}>
-          <img src="../src/assets/002-boton-mas.png" alt="" srcset="" />
+          <img src="../src/assets/002-boton-mas.png" alt="boton mas" />
         </button>
       </div>
     </div>

@@ -17,12 +17,18 @@ export default function CartContextProvider({ children }) {
     }
   };
 
+  const deleteFromCart = (cartItem) => {
+    setCart(cart.filter((item) => item.id != cartItem.id));
+  };
+
   const getCartQty = () => {
     return cart.reduce((acc, curr) => (acc += curr.qty), 0);
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, getCartQty }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, getCartQty, deleteFromCart }}
+    >
       {children}
     </CartContext.Provider>
   );

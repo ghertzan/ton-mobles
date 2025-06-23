@@ -10,7 +10,10 @@ export default function CartDetailContainer() {
         <div className="row">
           <div className="col-lg-8">
             {cart.map((cartItem) => (
-              <CartItemDetail cartItem={cartItem}></CartItemDetail>
+              <CartItemDetail
+                key={cartItem.id}
+                cartItem={cartItem}
+              ></CartItemDetail>
             ))}
           </div>
 

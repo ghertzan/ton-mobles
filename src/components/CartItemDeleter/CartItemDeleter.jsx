@@ -1,7 +1,12 @@
+import { useCart } from "../../hooks/useCart";
+
 export default function CartItemDeleter({ item }) {
+  const { deleteFromCart } = useCart();
+
   const handleDelete = () => {
-    alert("Delete");
+    deleteFromCart(item);
   };
+
   return (
     <>
       <div>
