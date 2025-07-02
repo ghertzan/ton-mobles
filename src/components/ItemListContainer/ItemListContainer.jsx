@@ -2,19 +2,21 @@ import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router";
 
+import { getAllProducts, getProductsByCategory } from "../../database/db";
+
 export default function ItemListContainer() {
   const [items, setItems] = useState([]);
   const { categoryName } = useParams();
 
   useEffect(() => {
-    if (categoryName) {
-      fetch(`https://dummyjson.com/products/category/${categoryName}`)
-        .then((res) => res.json())
-        .then((data) => setItems(data.products));
+    if (categoryName != "todo") {
+      getProductsByCategory(categoryName).then((e) => {
+        setItems(e);
+      });
     } else {
-      fetch("https://dummyjson.com/products")
-        .then((res) => res.json())
-        .then((data) => setItems(data.products));
+      getAllProducts().then((e) => {
+        setItems(e);
+      });
     }
   }, [categoryName]);
 
