@@ -1,20 +1,18 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router";
+import { getProducts, getProductsByCategory } from "../firebase/database";
 
 export default function ItemListContainer() {
   const [items, setItems] = useState([]);
   const { categoryName } = useParams();
 
   useEffect(() => {
-    if (categoryName) {
-      fetch(`https://dummyjson.com/products/category/${categoryName}`)
-        .then((res) => res.json())
-        .then((data) => setItems(data.products));
-    } else {
-      fetch("https://dummyjson.com/products")
-        .then((res) => res.json())
-        .then((data) => setItems(data.products));
+    if(categoryName){
+      getProductsByCategory(categoryName).then( data => setItems(data))
+    }else{
+      getProducts().then(data => setItems(data)
+    );
     }
   }, [categoryName]);
 

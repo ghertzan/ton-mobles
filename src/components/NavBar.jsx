@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import CartWidget from "./CartWidget";
 import { NavLink } from "react-router";
+import { getCategories } from "../firebase/database";
 
 function NavBar() {
   const [categories, setCategories] = useState([]);
-
+  const getCat = useRef(getCategories());
+  
   useEffect(() => {
-    fetch("https://dummyjson.com/products/categories")
-      .then((res) => res.json())
-      .then((data) => setCategories(data));
+    setCategories(getCat.current);
   }, [categories]);
 
   return (
@@ -33,26 +33,6 @@ function NavBar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Sillas
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Sillones
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Mesas
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link " href="#" aria-disabled="true">
-                Juegos
-              </a>
-            </li>
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
@@ -64,16 +44,20 @@ function NavBar() {
                 Categorias
               </a>
               <ul className="dropdown-menu">
-                {categories.map((cat) => (
-                  <li key={cat.name}>
-                    <NavLink
-                      to={`/category/${cat.slug}`}
-                      className="dropdown-item"
-                    >
-                      {cat.name}
-                    </NavLink>
+      
+                  <li>
+                    <NavLink to={'/category/comedor'} className={'dropdown-item'} >Comedor</NavLink>
                   </li>
-                ))}
+                  
+                  <li>
+                    <NavLink to={'/category/dormitorio'} className={'dropdown-item'} >Dormitorio</NavLink>
+                  </li>    
+
+                  
+                  <li>
+                    <NavLink to={'/category/living'} className={'dropdown-item'} >Living</NavLink>
+                  </li>  
+              
               </ul>
             </li>
           </ul>
