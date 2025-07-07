@@ -1,12 +1,40 @@
-# React + Vite
+# Ton Mobles 🪑🛒
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Ton Mobles** es una pequeña aplicación de e-commerce desarrollada como proyecto final del curso de **ReactJS** en la academia **CoderHouse**. El sitio simula una tienda online de una mueblería, permitiendo a los usuarios explorar productos, ver sus detalles, agregarlos al carrito y finalizar la compra con una experiencia fluida tipo SPA (Single Page Application).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Características principales
 
-## Expanding the ESLint configuration
+- 🛍 Catálogo de productos con imágenes, descripciones y precios.
+- 🔍 Vista detallada de productos individuales.
+- 🛒 Carrito de compras con funcionalidades de agregar/eliminar ítems.
+- 📦 Integración a **Firebase** para la base de datos de artículos.
+- ⚡ Navegación sin recargas gracias a **React Router**.
+- 🔔 Notificaciones de interacción con **React Toastify**.
+- ⏳ Indicadores de carga amigables con **React Spinners**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Tecnologías utilizadas
+
+| Tecnología                                                  | Uso principal                     |
+| ----------------------------------------------------------- | --------------------------------- |
+| [React 19](https://reactjs.org/)                            | Librería base para la SPA         |
+| [React Router 7](https://reactrouter.com/)                  | Navegación y ruteo interno        |
+| [Firebase](https://firebase.google.com/)                    | Backend (Firestore, orders, etc.) |
+| [Vite](https://vitejs.dev/)                                 | Entorno de desarrollo y build     |
+| [Sass](https://sass-lang.com/)                              | Preprocesador CSS para estilos    |
+| [React Toastify](https://fkhadra.github.io/react-toastify/) | Notificaciones                    |
+| [React Spinners](https://www.davidhu.io/react-spinners/)    | Indicadores de carga              |
+
+---
+
+## 🚀 Instalación y uso local
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/ghertzan/ton-mobles.git
+cd ton-mobles
+```
